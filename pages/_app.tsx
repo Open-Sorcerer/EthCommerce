@@ -23,8 +23,6 @@ const mantleChain = {
   id: 5001,
   name: "Mantle",
   network: "Mantle",
-  iconUrl: "mantle_logo.png",
-  iconBackground: "#000",
   nativeCurrency: {
     decimals: 18,
     name: "Mantle",
@@ -58,28 +56,7 @@ const { provider, chains } = configureChains(
 
 const wagmiClient = createClient({
   autoConnect: true,
-  connectors: [
-    new MetaMaskConnector({ chains }),
-    new CoinbaseWalletConnector({
-      chains,
-      options: {
-        appName: "wagmi",
-      },
-    }),
-    new WalletConnectConnector({
-      chains,
-      options: {
-        qrcode: true,
-      },
-    }),
-    new InjectedConnector({
-      chains,
-      options: {
-        name: "Injected",
-        shimDisconnect: true,
-      },
-    }),
-  ],
+  connectors: [new MetaMaskConnector({ chains })],
   provider,
 });
 

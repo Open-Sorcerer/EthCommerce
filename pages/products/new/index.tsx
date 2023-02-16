@@ -49,8 +49,6 @@ enum Category {
 //   ethereum: any;
 // }
 
-declare var window: any;
-
 const CreateProduct: NextPage = () => {
   const router = useRouter();
   const { address } = useAccount();
@@ -128,14 +126,14 @@ const CreateProduct: NextPage = () => {
     }
   };
 
-  // const { config } = usePrepareContractWrite({
-  //   address: MANTLE_FACTORY_CONTRACT_ADDRESS,
-  //   abi: FACTORY_CONTRACT_ABI,
-  //   functionName: "createCourse",
-  //   args: [projectURI],
-  // });
+  const { config } = usePrepareContractWrite({
+    address: MANTLE_FACTORY_CONTRACT_ADDRESS,
+    abi: FACTORY_CONTRACT_ABI,
+    functionName: "createCourse",
+    args: [projectURI],
+  });
 
-  // const { write } = useContractWrite(config);
+  const { write } = useContractWrite(config);
 
   // add post to db
   const addPost = async (product: Product) => {
