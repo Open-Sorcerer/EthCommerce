@@ -15,6 +15,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@headlessui/react": "^1.7.10",
     "@lighthouse-web3/sdk": "^0.1.12",
+    "@rainbow-me/rainbowkit": "^0.11.0",
     "@splinetool/react-spline": "^2.2.5",
     "@splinetool/runtime": "^0.9.213",
     "@thirdweb-dev/storage": "^1.0.8",
